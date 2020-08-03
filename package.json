@@ -1,0 +1,19 @@
+{
+  "name": "typed-event-dispatcher",
+  "version": "1.0.0",
+  "main": "dist/TypedEventDispatcher.js",
+  "types": "dist/TypedEventDispatcher.d.ts",
+  "repository": "git@github.com:misinoe/TypedEventEmitter.git",
+  "author": "misinoe <7781818+misinoe@users.noreply.github.com>",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.8",
+    "jest": "^26.2.2",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  }
+}
