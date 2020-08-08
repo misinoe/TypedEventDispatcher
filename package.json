@@ -1,5 +1,5 @@
 {
-  "name": "typed-event-dispatcher",
+  "name": "@misinoe/typed-event-dispatcher",
   "version": "1.0.0",
   "main": "dist/TypedEventDispatcher.js",
   "types": "dist/TypedEventDispatcher.d.ts",
