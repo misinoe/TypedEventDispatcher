@@ -1,5 +1,4 @@
 type PayloadCallback<P> = (payload: P) => void;
-
 export default class EventDispatcher<P> {
   listeners: PayloadCallback<P>[] = [];
   onceListeners: PayloadCallback<P>[] = [];
@@ -12,12 +11,13 @@ export default class EventDispatcher<P> {
   dispatch(payload: P) {
     let i: number;
     let len: number;
-    const {listeners, onceListeners} = this;
 
+    const listeners = this.listeners.slice(0);
     for(i = 0, len = listeners.length; i < len; i++) {
       listeners[i](payload);
     }
 
+    const onceListeners = this.onceListeners.slice(0);
     if (onceListeners.length > 0) {
       for(i = 0, len = onceListeners.length; i < len; i++) {
         onceListeners[i](payload);

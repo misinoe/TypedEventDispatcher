@@ -41,9 +41,11 @@ describe('EventDispatcher test', () => {
 
     eventDispatcher.dispatch({payload: 'payload'});
     eventDispatcher.dispatch({payload: 12345});
+    eventDispatcher.dispatch({payload: [1, 2, 3]});
+    eventDispatcher.dispatch({payload: 6789});
 
-    expect(callCount).toBe(1);
-    expect(payload).toBe('payload');
+    expect(callCount).toBe(4);
+    expect(payload).toBe(6789);
   });
 
   test('on to off test', () => {
@@ -111,7 +113,13 @@ describe('EventDispatcher test', () => {
     eventDispatcher.dispatch({payload: 2});
     eventDispatcher.dispatch({payload: 3});
 
-    expect(payloadListA).toStrictEqual([1]);
+    expect(payloadListA).toStrictEqual([1, 2, 3]);
+
+    removeCount = eventDispatcher.off(callbackA);
+    expect(removeCount).toBe(1);
+
+    eventDispatcher.dispatch({payload: 4});
+    expect(payloadListA).toStrictEqual([1, 2, 3]);
 
     removeCount = eventDispatcher.off(callbackA);
     expect(removeCount).toBe(0);
