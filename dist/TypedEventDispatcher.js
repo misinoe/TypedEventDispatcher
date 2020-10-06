@@ -10,10 +10,11 @@ var EventDispatcher = /** @class */ (function () {
     EventDispatcher.prototype.dispatch = function (payload) {
         var i;
         var len;
-        var _a = this, listeners = _a.listeners, onceListeners = _a.onceListeners;
+        var listeners = this.listeners.slice(0);
         for (i = 0, len = listeners.length; i < len; i++) {
             listeners[i](payload);
         }
+        var onceListeners = this.onceListeners.slice(0);
         if (onceListeners.length > 0) {
             for (i = 0, len = onceListeners.length; i < len; i++) {
                 onceListeners[i](payload);
