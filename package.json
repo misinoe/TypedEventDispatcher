@@ -1,6 +1,6 @@
 {
   "name": "@misinoe/typed-event-dispatcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/TypedEventDispatcher.js",
   "types": "dist/TypedEventDispatcher.d.ts",
   "repository": "git@github.com:misinoe/TypedEventEmitter.git",
