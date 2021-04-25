@@ -1,5 +1,5 @@
 type PayloadCallback<P> = (payload: P) => void;
-export default class EventDispatcher<P> {
+export class EventDispatcher<P> {
   listeners: PayloadCallback<P>[] = [];
   onceListeners: PayloadCallback<P>[] = [];
 
@@ -64,3 +64,5 @@ export default class EventDispatcher<P> {
     return deleteCount;
   }
 }
+
+export default EventDispatcher;
