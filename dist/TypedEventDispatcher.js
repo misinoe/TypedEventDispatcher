@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EventDispatcher = void 0;
 var EventDispatcher = /** @class */ (function () {
     function EventDispatcher() {
         this.listeners = [];
@@ -55,5 +58,6 @@ var EventDispatcher = /** @class */ (function () {
     };
     return EventDispatcher;
 }());
-export default EventDispatcher;
+exports.EventDispatcher = EventDispatcher;
+exports.default = EventDispatcher;
 //# sourceMappingURL=TypedEventDispatcher.js.map

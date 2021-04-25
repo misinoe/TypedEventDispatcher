@@ -1,5 +1,5 @@
 declare type PayloadCallback<P> = (payload: P) => void;
-export default class EventDispatcher<P> {
+export declare class EventDispatcher<P> {
     listeners: PayloadCallback<P>[];
     onceListeners: PayloadCallback<P>[];
     dispose(): void;
@@ -8,4 +8,4 @@ export default class EventDispatcher<P> {
     once(callback: PayloadCallback<P>): void;
     off(callback: PayloadCallback<P>): number;
 }
-export {};
+export default EventDispatcher;
